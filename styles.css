@@ -1,0 +1,134 @@
+:root {
+  color-scheme: dark;
+  --bg: #070b19;
+  --surface: #111931;
+  --surface-alt: #1a2544;
+  --text: #e8eeff;
+  --muted: #a6b3d8;
+  --accent: #63b7ff;
+  --border: #27365f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at 20% -10%, #1d2e56, var(--bg) 40%);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.hero,
+.section,
+.footer {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin: 0.15rem 0 1rem;
+}
+
+.section {
+  margin-top: 3rem;
+}
+
+.section-intro {
+  color: var(--muted);
+  margin-top: 0;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: linear-gradient(160deg, var(--surface), var(--surface-alt));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.image-slot {
+  border: 1px dashed #4d659f;
+  border-radius: 12px;
+  padding: 1rem;
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #c3cff4;
+  background: rgba(13, 18, 35, 0.4);
+}
+
+.hero-image {
+  margin-top: 1.25rem;
+  min-height: 320px;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+}
+
+.footer {
+  color: var(--muted);
+  padding: 3rem 0 2.5rem;
+}
