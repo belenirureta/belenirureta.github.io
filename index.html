@@ -3,74 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dr. Your Name | Astrophysicist</title>
+  <title>Dr. Your Name | Astrophysics</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
-      background: #0b0f19;
-      color: #e6e6e6;
-      line-height: 1.6;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, Arial, sans-serif;
+    }
+
+    body {
+      background: #050814;
+      color: #eaf0ff;
+      overflow-x: hidden;
+    }
+
+    /* STARFIELD CANVAS */
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
 
     header {
-      padding: 60px 20px;
+      padding: 100px 20px;
       text-align: center;
-      background: linear-gradient(120deg, #1b2735, #090a0f);
+      background: radial-gradient(circle at top, rgba(30,50,120,0.4), transparent 60%);
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2.8em;
+      font-size: 3rem;
+      letter-spacing: 1px;
     }
 
     header p {
-      font-size: 1.2em;
-      color: #b0b0b0;
+      margin-top: 10px;
+      color: #b9c6ff;
     }
 
     nav {
-      text-align: center;
-      padding: 10px;
-      background: #111827;
       position: sticky;
       top: 0;
+      background: rgba(10,15,30,0.8);
+      backdrop-filter: blur(10px);
+      padding: 12px;
+      text-align: center;
+      z-index: 10;
     }
 
     nav a {
       margin: 0 15px;
-      color: #9ca3af;
+      color: #9fb4ff;
       text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: white;
     }
 
     section {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
-      padding: 50px 20px;
+      padding: 60px 20px;
     }
 
     h2 {
-      border-left: 4px solid #60a5fa;
-      padding-left: 10px;
+      font-size: 1.8rem;
       margin-bottom: 20px;
+      border-left: 4px solid #6aa6ff;
+      padding-left: 12px;
     }
 
-    .project-grid {
+    /* HERO IMAGE GRID */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .hero-grid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+
+    .hero-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    /* CARDS */
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
 
     .card {
-      background: #111827;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
       padding: 15px;
-      border-radius: 10px;
+      border-radius: 14px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     .card img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
       margin-bottom: 10px;
     }
 
@@ -80,103 +128,129 @@
 
     footer {
       text-align: center;
-      padding: 30px;
-      background: #111827;
-      color: #777;
+      padding: 40px;
+      color: #7f8bb3;
+      background: rgba(10,15,30,0.6);
     }
   </style>
 </head>
-
 <body>
+
+<canvas id="starfield"></canvas>
 
 <header>
   <h1>Dr. Your Name</h1>
-  <p>Astrophysicist | Cosmology | High-Energy Astrophysics</p>
+  <p>Astrophysicist | Cosmology | Extragalactic Physics</p>
 </header>
 
 <nav>
   <a href="#about">About</a>
+  <a href="#gallery">Universe</a>
   <a href="#projects">Projects</a>
   <a href="#publications">Publications</a>
-  <a href="#talks">Talks</a>
   <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
 </nav>
 
 <section id="about">
   <h2>About</h2>
   <p>
-    I am an astrophysicist working on galaxy formation, dark matter modeling,
-    and high-energy cosmic phenomena. My research combines simulations and
-    observational data from space telescopes.
+    I study the universe at its largest scales — galaxy formation, dark matter, and cosmic evolution.
+    My work combines simulations, observational astronomy, and data science.
   </p>
+</section>
+
+<section id="gallery">
+  <h2>The Universe</h2>
+  <div class="hero-grid">
+    <img src="https://images.nasa.gov/details-PIA23645" alt="galaxy">
+    <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564" alt="space">
+    <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3" alt="nebula">
+    <img src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986" alt="stars">
+  </div>
 </section>
 
 <section id="projects">
   <h2>Featured Projects</h2>
-
-  <div class="project-grid">
-
+  <div class="grid">
     <div class="card">
-      <img src="https://via.placeholder.com/600x300" alt="Project 1">
-      <h3>Galaxy Evolution Simulation</h3>
-      <p>High-resolution cosmological simulations of galaxy formation across redshift.</p>
+      <img src="https://images.unsplash.com/photo-1581822261290-991b38693d1b" />
+      <h3>Galaxy Formation Simulations</h3>
+      <p>Large-scale cosmological simulations of structure formation.</p>
     </div>
 
     <div class="card">
-      <img src="https://via.placeholder.com/600x300" alt="Project 2">
+      <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa" />
       <h3>Dark Matter Mapping</h3>
-      <p>Weak lensing reconstruction of dark matter distribution in galaxy clusters.</p>
+      <p>Weak lensing reconstruction of dark matter halos.</p>
     </div>
 
     <div class="card">
-      <img src="https://via.placeholder.com/600x300" alt="Project 3">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" />
       <h3>Exoplanet Atmospheres</h3>
-      <p>Spectral analysis of exoplanet atmospheres using transit data.</p>
+      <p>Spectral analysis of distant planetary atmospheres.</p>
     </div>
-
   </div>
 </section>
 
 <section id="publications">
   <h2>Publications</h2>
   <ul>
-    <li>Author et al. (2025) – Journal of Astrophysics: "Dark Matter Halo Structures"</li>
-    <li>Author et al. (2024) – Nature Astronomy: "Early Galaxy Formation Models"</li>
-    <li>Author et al. (2023) – ApJ: "Spectroscopic Signatures of Exoplanets"</li>
-  </ul>
-</section>
-
-<section id="talks">
-  <h2>Talks & Conferences</h2>
-  <ul>
-    <li>IAU Symposium 2025 – Invited Talk</li>
-    <li>Cosmology Conference 2024 – Poster Presentation</li>
-    <li>NASA Research Seminar Series – Guest Speaker</li>
+    <li>Author et al. (2025) — Dark Matter Halo Evolution</li>
+    <li>Author et al. (2024) — Early Universe Galaxy Formation</li>
+    <li>Author et al. (2023) — Exoplanet Spectroscopy</li>
   </ul>
 </section>
 
 <section id="skills">
-  <h2>Languages & Skills</h2>
+  <h2>Skills</h2>
   <ul>
     <li>Python (Astropy, NumPy, SciPy)</li>
-    <li>Julia, C++</li>
-    <li>Machine Learning for astrophysical data</li>
-    <li>Data visualization (Matplotlib, Plotly)</li>
-    <li>HPC cluster computing</li>
+    <li>C++, Julia</li>
+    <li>Machine Learning for Astronomy</li>
+    <li>High Performance Computing (HPC)</li>
+    <li>Data Visualization</li>
   </ul>
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: yourname@university.edu</p>
-  <p>GitHub: github.com/yourusername</p>
-  <p>ORCID: 0000-0000-0000-0000</p>
-</section>
-
 <footer>
-  © 2026 Dr. Your Name — Built with GitHub Pages
+  © 2026 Dr. Your Name — Astrophysics Research Portfolio
 </footer>
+
+<script>
+// SIMPLE STARFIELD ANIMATION
+const canvas = document.getElementById('starfield');
+const ctx = canvas.getContext('2d');
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+const stars = Array.from({ length: 200 }, () => ({
+  x: Math.random() * window.innerWidth,
+  y: Math.random() * window.innerHeight,
+  r: Math.random() * 1.5
+}));
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = 'white';
+
+  for (let s of stars) {
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fill();
+
+    s.y += 0.2;
+    if (s.y > canvas.height) s.y = 0;
+  }
+
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
 
 </body>
 </html>
