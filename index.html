@@ -158,7 +158,7 @@
     <!-- TEXT CARD -->
     <div>
       <p style="margin-bottom:16px;">
-        Hi! I'm Belén Yu and I work at the intersection of astrophysics, planetary science and artificial intelligence. 
+        Hi! I'm Belén Yu and I work at the intersection of planetary science and artificial intelligence. 
       </p>
       <p style="margin-bottom:16px;">
         — My PhD research has focused on ML methods to find and characterise moving objects in astronomical surveys, with applications to asteroid detection and space-debris monitoring. 
@@ -279,25 +279,61 @@
 </section>
 
 <section id="activity">
-  <h2>Activity</h2>
+  <h2>Latest activity</h2>
 
-<div class="card"> 
-    <p style="margin-bottom:12px;">2026 — Euclid Consortium Annual Meeting, Barcelona, ES (oral presentation)</p> 
-    <p style="margin-bottom:12px;">2026 — ESA Space Science Workshop 18, La Granja de San Ildefonso, ES (poster)</p> 
-    <p style="margin-bottom:12px;">2026 — Invited talk, Near-Earth Object Coordination Centre, Frascati, IT</p> 
-    <p style="margin-bottom:12px;">2025 — 9th IAA Planetary Defence Conference, Stellenbosch, ZA (poster)</p> 
-    <p style="margin-bottom:12px;">2024 — 16th Spanish Astronomical Society Meeting, Granada, ES (oral presentation)</p> 
-    <p style="margin-bottom:12px;">2024 — Machine Learning in Astrophysics Conference, Catania, IT</p> 
-    <p style="margin-bottom:12px;">2024 — Invited talk, JPL Planetary Science Seminars, Pasadena, US</p> 
-    <p style="margin-bottom:12px;">2024 — Invited talk, MIT Planetary Lunch Series, Cambridge, US</p> 
-    <p style="margin-bottom:12px;">2024 — Invited talk, Harvard CfA AstroAI Lunch Talks, Cambridge, US</p> 
-    <p style="margin-bottom:12px;">2024 — Invited talk, IPAC Science Talks, Pasadena, US</p> 
-    <p style="margin-bottom:12px;">2023 — Invited talk, CEA Saclay, Paris, FR</p> 
-    <p style="margin-bottom:12px;">2022 — LEO Kinetic Space Safety Workshop, Lausanne, CH</p>
-    <p style="margin-bottom:12px;">2022 — 23rd Advanced Maui Optical and Space Surveillance Conference, Maui, US (poster)</p> 
-    <p style="margin-bottom:12px;">2022 — DECam at 10 years Workshop, Tucson, US</p> 
-    <p style="margin-bottom:12px;">2022 — 3rd IAA Conference on Space Situational Awareness, Madrid, ES (oral presentation)</p> 
-    </div> 
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:2rem; align-items:start;">
+
+    <!-- LEFT: Activity list -->
+    <div class="card">
+      <p style="margin-bottom:12px;">2026 — Euclid Consortium Annual Meeting, Barcelona, ES (oral presentation)</p>
+      <p style="margin-bottom:12px;">2026 — ESA Space Science Workshop 18, La Granja de San Ildefonso, ES (poster)</p>
+      <p style="margin-bottom:12px;">2026 — Near-Earth Object Coordination Centre, Frascati, IT (invited seminar)</p>
+      <p style="margin-bottom:12px;">2025 — 9th IAA Planetary Defence Conference, Stellenbosch, ZA (poster)</p>
+      <p style="margin-bottom:12px;">2024 — 16th Spanish Astronomical Society Meeting, Granada, ES (oral presentation)</p>
+      <p style="margin-bottom:12px;">2024 — Machine Learning in Astrophysics Conference, Catania, IT (oral presentation)</p>
+      <p style="margin-bottom:12px;">2024 — JPL Planetary Science Seminars, Pasadena, US (invited seminar)</p>
+      <p style="margin-bottom:12px;">2024 — MIT Planetary Lunch Series, Cambridge, US (invited seminar)</p>
+      <p style="margin-bottom:12px;">2024 — Harvard CfA AstroAI Lunch Talks, Cambridge, US (invited seminar)</p>
+      <p style="margin-bottom:12px;">2024 — IPAC Science Talks, Pasadena, US (invited seminar)</p>
+      <p style="margin-bottom:12px;">2023 — CEA Saclay, Paris, FR (invited seminar)</p>
+      <p style="margin-bottom:12px;">2022 — LEO Kinetic Space Safety Workshop, Lausanne, CH (attendee)</p>
+      <p style="margin-bottom:12px;">2022 — 23rd Advanced Maui Optical and Space Surveillance Conference, Maui, US (poster)</p>
+      <p style="margin-bottom:12px;">2022 — DECam at 10 years Workshop, Tucson, US (attendee)</p>
+      <p style="margin-bottom:12px;">2022 — 3rd IAA Conference on Space Situational Awareness, Madrid, ES (oral presentation)</p>
+    </div>
+
+    <!-- RIGHT: Slideshow -->
+    <div>
+      <img
+        id="activity-slideshow"
+        src="../images/1.jpg"
+        style="width:100%; height:auto; display:block;"
+        alt="Activity slideshow"
+      >
+    </div>
+
+  </div>
+
+  <script>
+    const images = [
+      "../images/1.jpg",
+      "../images/2.jpg",
+      "../images/3.jpeg",
+      "../images/4.jpeg",
+      "../images/5.jpg",
+      "../images/6.jpg",
+      "../images/7.jpeg",
+      "../images/8.jpg"
+    ];
+
+    let current = 0;
+    const slideshow = document.getElementById("activity-slideshow");
+
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      slideshow.src = images[current];
+    }, 2000);
+  </script>
 </section>
 
 <section id="outreach">
