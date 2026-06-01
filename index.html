@@ -27,14 +27,276 @@
     }
 
     header {
-      padding: 80px 20px;
+      padding: 100px 20px;
       text-align: center;
       background: radial-gradient(circle at top, rgba(30,50,120,0.4), transparent 60%);
     }
 
-    .header-wrap {
-      display: flex;
-      align-items: center;
+    header h1 { font-size: 3rem; }
+    header p { margin-top: 10px; color: #b9c6ff; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(10,15,30,0.8);
+      backdrop-filter: blur(10px);
+      padding: 12px;
+      text-align: center;
+      z-index: 10;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #9fb4ff;
+      text-decoration: none;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      border-left: 4px solid #6aa6ff;
+      padding-left: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 15px;
+      border-radius: 14px;
+      backdrop-filter: blur(10px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #7f8bb3;
+      background: rgba(10,15,30,0.6);
+    }
+  </style>
+</head>
+
+<body>
+
+<canvas id="starfield"></canvas>
+
+<header>
+  <h1>Dr. Your Name</h1>
+  <p>Astrophysicist | Cosmology | Extragalactic Physics</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#publications">Publications</a>
+  <a href="#activity">Activity</a>
+  <a href="#outreach">Outreach</a>
+  <a href="#education">Education</a>
+  <a href="#languages">Languages</a>
+  <a href="#visiting">Visiting</a>
+</nav>
+
+<section id="about">
+  <h2>About</h2>
+  <p>
+    I study the universe at its largest scales — galaxy formation, dark matter, and cosmic evolution.
+  </p>
+</section>
+
+<!-- PROJECTS (unchanged) -->
+<section id="projects">
+  <h2>Featured Projects</h2>
+  <div class="grid">
+    <a class="card" href="https://www.aanda.org/articles/aa/full_html/2025/02/aa52756-24/aa52756-24.html">
+      <img src="images/fig_vst_01.png">
+      <h3>VST/OmegaCAM asteroid detection</h3>
+    </a>
+
+    <a class="card" href="https://arxiv.org/abs/2604.02999">
+      <img src="images/fig_euclid_01.png">
+      <h3>Euclid asteroid rotation science</h3>
+    </a>
+
+    <a class="card" href="https://www.ipac.caltech.edu/publication/2025PASP..137e4503I">
+      <img src="images/fig_ztf_01.png">
+      <h3>ZTF asteroid detection</h3>
+    </a>
+  </div>
+</section>
+
+<!-- PUBLICATIONS (RESTORED FULL LIST) -->
+<section id="publications">
+  <h2>Publications</h2>
+
+  <h3>Accepted</h3>
+  <div class="grid">
+    <div class="card">
+      <p>Rachith et al. (2026). Streak detection in VST/OmegaCAM. A&A (accepted).</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:20px;">Published</h3>
+  <div class="grid">
+
+    <div class="card"><p><b>Irureta-Goyena et al.</b> (2026). Euclid asteroid rotation periods. A&A.</p></div>
+    <div class="card"><p>Kleijn et al. (2026). ML-assisted NEO discovery. arXiv:2604.02999.</p></div>
+    <div class="card"><p><b>Irureta-Goyena et al.</b> (2025). NEO detection in ZTF. PASP.</p></div>
+    <div class="card"><p><b>Irureta-Goyena et al.</b> (2025). CNN asteroid detection in VST. A&A.</p></div>
+    <div class="card"><p>Pöntinen et al. (2025). Euclid asteroid science.</p></div>
+    <div class="card"><p>Rachith et al. (2023). ML streak detection. LPI.</p></div>
+    <div class="card"><p>Hellmich et al. (2023). Space debris observations.</p></div>
+    <div class="card"><p><b>Irureta-Goyena et al.</b> (2022). AMOS conference paper.</p></div>
+    <div class="card"><p><b>Irureta-Goyena et al.</b> (2022). IAA SSA conference paper.</p></div>
+
+  </div>
+</section>
+
+<!-- ACTIVITY (RESTORED EXACT CONTENT) -->
+<section id="activity">
+  <h2>Activity</h2>
+
+  <div class="card">
+    <p style="margin-bottom:12px;">2026 — Euclid Consortium Annual Meeting, Barcelona, ES (oral presentation)</p>
+    <p style="margin-bottom:12px;">2026 — ESA Space Science Workshop 18, La Granja de San Ildefonso, ES (poster)</p>
+    <p style="margin-bottom:12px;">2026 — Invited talk, Near-Earth Object Coordination Centre, Frascati, IT</p>
+    <p style="margin-bottom:12px;">2025 — 9th IAA Planetary Defence Conference, Stellenbosch, ZA (poster)</p>
+    <p style="margin-bottom:12px;">2024 — 16th Spanish Astronomical Society Meeting, Granada, ES (oral presentation)</p>
+    <p style="margin-bottom:12px;">2024 — Machine Learning in Astrophysics Conference, Catania, IT</p>
+    <p style="margin-bottom:12px;">2024 — Invited talk, JPL Planetary Science Seminars, Pasadena, US</p>
+    <p style="margin-bottom:12px;">2024 — Invited talk, MIT Planetary Lunch Series, Cambridge, US</p>
+    <p style="margin-bottom:12px;">2024 — Invited talk, Harvard CfA AstroAI Lunch Talks, Cambridge, US</p>
+    <p style="margin-bottom:12px;">2024 — Invited talk, IPAC Science Talks, Pasadena, US</p>
+    <p style="margin-bottom:12px;">2023 — Invited talk, CEA Saclay, Paris, FR</p>
+    <p style="margin-bottom:12px;">2022 — LEO Kinetic Space Safety Workshop, Lausanne, CH</p>
+    <p style="margin-bottom:12px;">2022 — 23rd Advanced Maui Optical and Space Surveillance Conference, Maui, US (poster)</p>
+    <p style="margin-bottom:12px;">2022 — DECam at 10 years Workshop, Tucson, US</p>
+    <p style="margin-bottom:12px;">2022 — 3rd IAA Conference on Space Situational Awareness, Madrid, ES (oral presentation)</p>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2>Education</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>PhD — EPFL</h3>
+      <p>Astrophysics, AI in astronomy</p>
+    </div>
+
+    <div class="card">
+      <h3>MPhys — Manchester</h3>
+      <p>First Class Honours</p>
+    </div>
+
+    <div class="card">
+      <h3>Sorbonne Université</h3>
+      <p>Exchange Year</p>
+    </div>
+
+    <div class="card">
+      <h3>Baccalaureate</h3>
+      <p>IES San Mateo — Excellence</p>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGES -->
+<section id="languages">
+  <h2>Languages</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Programming Languages</h3>
+      <p>Python (TensorFlow, PyTorch)</p>
+      <p>C++ (Advanced)</p>
+      <p>LaTeX (Advanced)</p>
+      <p>MATLAB (Intermediate)</p>
+      <p>LabVIEW (Intermediate)</p>
+    </div>
+
+    <div class="card">
+      <h3>Other Languages</h3>
+      <p>Spanish (Native)</p>
+      <p>English (Fluent)</p>
+      <p>French (Fluent spoken)</p>
+      <p>Mandarin (HSK4 / B2 writing)</p>
+    </div>
+  </div>
+</section>
+
+<!-- VISITING -->
+<section id="visiting">
+  <h2>Visiting Researcher</h2>
+
+  <div class="grid">
+    <div class="card">
+      <img src="images/esac.jpg">
+      <p>ESAC — ESA (2024–2025)</p>
+    </div>
+
+    <div class="card">
+      <img src="images/ipac.jpg">
+      <p>IPAC — Caltech (2023–2024)</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Dr. Your Name
+</footer>
+
+<script>
+const canvas = document.getElementById('starfield');
+const ctx = canvas.getContext('2d');
+
+function resize(){
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+const stars = Array.from({length:200}, () => ({
+  x: Math.random()*window.innerWidth,
+  y: Math.random()*window.innerHeight,
+  r: Math.random()*1.5
+}));
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="white";
+  for(let s of stars){
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fill();
+    s.y += 0.2;
+    if(s.y > canvas.height) s.y = 0;
+  }
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
+
+</body>
+</html>      align-items: center;
       justify-content: center;
       gap: 30px;
       flex-wrap: wrap;
